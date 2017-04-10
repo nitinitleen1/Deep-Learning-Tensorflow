@@ -1,4 +1,3 @@
-
 #Importing
 import numpy as np
 from scipy import signal
@@ -28,7 +27,7 @@ arr = np.asarray(image_gr)
 print("After conversion to numerical representation: \n\n %r" % arr) 
 
 ### Activating matplotlib for Ipython
-%matplotlib inline
+#%matplotlib inline
 
 ### Plot image
 
@@ -45,7 +44,7 @@ kernel = np.array([
 
 grad = signal.convolve2d(arr, kernel, mode='same', boundary='symm')
 
-%matplotlib inline
+#%matplotlib inline
 
 print('GRADIENT MAGNITUDE - Feature map')
 
@@ -53,13 +52,10 @@ fig, aux = plt.subplots(figsize=(10, 10))
 aux.imshow(np.absolute(grad), cmap='gray')
 
 type(grad)
-
 grad_biases = np.absolute(grad) + 100
-
 grad_biases[grad_biases > 255] = 255
 
-%matplotlib inline
-
+#%matplotlib inline
 print('GRADIENT MAGNITUDE - Feature map')
 
 fig, aux = plt.subplots(figsize=(10, 10))
