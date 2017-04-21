@@ -65,7 +65,7 @@ state = tf.Variable(0)
 one = tf.constant(1)
 new_value = tf.add(state, one)
 update = tf.assign(state, new_value)
-init_op = tf.global_variables_initializer()
+init_op = tf.initialize_all_variables()
 
 
 with tf.Session() as session:
@@ -92,7 +92,7 @@ with tf.Session() as sess:
 a = tf.constant([5])
 b = tf.constant([2])
 c = tf.add(a,b)
-d = tf.subtract(a,b)
+d = tf.sub(a,b)
 
 with tf.Session() as session:
     result = session.run(c)
